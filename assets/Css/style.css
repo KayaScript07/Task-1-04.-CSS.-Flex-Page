@@ -7,16 +7,53 @@
 body {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    font-size: 16px;
    
-   
+  
 }
 
-header {
+.welcomePart {
     background-image:url(../../images/bg.jpeg);
     background-size: cover;
     background-position: center;
-    width: 100vh;
-   
+    height: 450px;
+    text-align: center;
+    display: flex;  
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.box1 {
+display: flex;          /* Включаємо Flexbox */
+flex-direction: column; /* Розташовуємо елементи у стовпчик */
+align-items: center;  
+max-width: 800px;
+padding: 20px;
+text-decoration: none;
+line-height: 2;
+gap: 20px; 
+padding: 20px;
+}
+
+
+.box1 h1 {
+    font-size: 2rem;
+}
+
+.box1  p {
+   font-size: 1.125rem; 
+}
+.box1 a {
+color: white;
+text-decoration: none;
+border: 1px solid grey;
+padding: 10px 20px; /* Додаємо внутрішні відступи для кнопки */
+background: #333;   /* Додатковий стиль для кнопки */
+
+}
+
+a.button:hover {
+    background-color: lightgray; 
+    color: black;
 }
