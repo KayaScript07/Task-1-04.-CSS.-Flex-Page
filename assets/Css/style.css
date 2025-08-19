@@ -4,56 +4,250 @@
     padding: 0;
 }
 
+:root {
+    --color-white: #ffffff;
+    --color-black: #000000;
+    --background-color1:#d3d3d3; 
+    --background-color2:#333333;
+}
+
 body {
     display: flex;
     flex-direction: column;
     font-size: 16px;
-   
-  
+    text-align: center;
 }
 
 .welcomePart {
+    display: flex;  
+    justify-content: center;
+    align-items: center;
     background-image:url(../../images/bg.jpeg);
     background-size: cover;
     background-position: center;
     height: 450px;
     text-align: center;
-    display: flex;  
-    justify-content: center;
-    align-items: center;
-    color: white;
+    color: var(--color-white);
 }
 
-.box1 {
-display: flex;          /* Включаємо Flexbox */
-flex-direction: column; /* Розташовуємо елементи у стовпчик */
-align-items: center;  
-max-width: 800px;
-padding: 20px;
-text-decoration: none;
-line-height: 2;
-gap: 20px; 
-padding: 20px;
+.box1 { 
+    max-width: 100vw;
+    padding: 40px;
+    line-height: 2;
+    
 }
 
 
 .box1 h1 {
-    font-size: 2rem;
+    font-size: 2.25rem;
 }
 
 .box1  p {
    font-size: 1.125rem; 
+   margin-bottom: 30px;
+   max-width: 800px; /* Тут краще прописати width в px, чи в співзалежності від width батьківського елемента ?*/
+   overflow-wrap: break-word;
 }
+
+
 .box1 a {
-color: white;
-text-decoration: none;
-border: 1px solid grey;
-padding: 10px 20px; /* Додаємо внутрішні відступи для кнопки */
-background: #333;   /* Додатковий стиль для кнопки */
+    color:inherit;
+    text-decoration: inherit;
+    font-size: 1.25rem;
+    border: 1px solid grey;
+    padding: 20px 35px; 
+    background: #333;   
 
 }
 
 a.button:hover {
-    background-color: lightgray; 
-    color: black;
+    background-color: var(--background-color1); 
+    color: var(--color-black);
+}
+
+.parentContainer1 {
+    display: flex;
+    min-width: 320px;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+    margin:  0 auto;
+    padding: 20px;
+    background: var(--background-color);
+    background-size: cover;
+    text-align: center;
+    
+}
+.childContainer1 {
+    width: 1000px;
+    overflow-wrap: break-word;
+    line-height: 1.5;
+    padding: 10px 20px;
+    margin: 20px auto;
+    /*Не можу зробити так, щоб при звуженні екрану на сторінці залишалась 1 колонка, а інша переносилась*/
+}
+
+.childContainer1 h2 {
+    font-size: 1.725rem;
+    padding-bottom: 20px;
+}
+
+.childContainer1 p {
+    font-size: 1.125rem;
+    column-count: 2; 
+    column-gap: 40px;
+    text-align: left;
+    padding: 0 20px;
+    margin: 0 auto;
+    max-width: 800px;
+    width: 100%; /* Краще вказувати в % чи в vw?*/
+
+}
+   
+@media screen and (max-width: 900px) {
+    .childContainer1 p {
+    column-count: 1;
+    }
+}
+
+.parentContainer2 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:center;
+    align-items: stretch;
+    min-width: 320px; /* Картки ведуть себе не так, при звуженні екрану має залишатися одна картка*/
+    width: 100vw;
+    margin: 10px auto;
+    padding: 15px;
+    border: 2px solid black;
+    background-color: var(--background-color2);
+    gap: 15px; /* Чи варто задавати gap, якщо є padding?*/
+    text-align: center;
+    }
+
+
+.card1, .card2, .card3 {
+    flex: 1 1 300px; /* Вивчити */
+    min-width: 280px; 
+    max-width: 300px; 
+    height: 500px; 
+    background: var(--color-white);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Опціонально: тінь */
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+@media screen and (max-width: 900px) {
+    .card1, .card2, .card3 {
+    column-count: 1;
+    max-width: 800px;
+    }
+}
+
+.card1 img, .card2 img, .card3 img {
+    width: 100%;
+    height: 200px; 
+    object-fit: cover; 
+}
+
+.card1 h3, .card2 h3, .card3 h3 {
+    padding: 15px 15px 0 15px;
+    font-size: 1.4rem;
+    margin-bottom: 30px;
+}
+
+.card1 p, .card2 p, .card3 p {
+    padding: 15px;
+    font-size: 1.15rem;
+}
+
+.parentContainer3 {
+    display:flex ;
+    justify-content:center;
+    align-items:center;
+    flex-wrap: wrap;
+    max-width: 900px;
+    padding: 40px 20px;
+    margin: 0 auto;
+    text-align: center;
+    line-height: 1.5;
+}
+
+.parentContainer3 h4 {
+    font-size: 1.725rem;
+    margin-bottom: 30px;
+}
+
+
+.parentContainer3 p {
+    font-size: 1.2rem;
+    padding: 10px 20px;
+}
+
+.parentContainer4 {
+    display: flex; /* Тут я не задала justify-content та align-items, а задала їх в дочірньому класі.Це ок?*/
+    min-width: 320px; /* Чи варто прописувати min-width? */
+    width: 100vw;
+    color: var(--color-white);
+}
+     
+.childBox1, .childBox2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    column: 2;
+    width: 50%;
+    height: 300px;
+}
+   
+.childBox1 h5, .childBox2 h5 {
+    font-size: 1.725rem;
+    margin: 40px;
+}
+
+.childBox1 p, .childBox2 p {
+    font-size: 1.25rem;
+    line-height: 1.5;
+    padding: 0 20px;
+}
+
+.childBox1 {
+    background-color: rgb(38, 144, 212);
+}
+
+.childBox2 {
+    background-color:var(--background-color2);
+}
+
+.lowerP {
+    text-align: end;/* Поки не можу розташувати цю р нижче. Зїжджає верхня р. Чи нанвішувати 2 класи на р?*/
+}
+
+/* Неперевірені елементи нижче*/
+
+.parentContainer5 {
+    display: flex;
+    width: 100%;
+    min-width: 320px;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: black;
+    gap: 20px;
+    flex-wrap: wrap;
+    min-height: 100px;
+  color: white;
+  
+}
+.parentContainer5 a {
+    text-decoration: none;
+    color:rgb(38, 144, 212);}
+
+    .parentContainer5 p {
+        margin: 0; /* Прибираємо зайві відступи */}
+
+        .footer-left, .footer-right {
+    flex: 1;
+    text-align: center;
 }
