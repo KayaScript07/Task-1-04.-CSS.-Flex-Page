@@ -85,7 +85,6 @@ a.button:hover {
     line-height: 1.5;
     padding: 10px 20px;
     margin: 20px auto;
-    /*Не можу зробити так, щоб при звуженні екрану на сторінці залишалась 1 колонка, а інша переносилась*/
 }
 
 .childContainer1 h2 {
@@ -116,7 +115,7 @@ a.button:hover {
     flex-wrap: wrap;
     justify-content:center;
     align-items: stretch;
-    min-width: 320px; /* Картки ведуть себе не так, при звуженні екрану має залишатися одна картка*/
+    min-width: 320px; 
     width: 100vw;
     margin: 10px auto;
     padding: 15px;
@@ -132,7 +131,6 @@ a.button:hover {
     max-width: 300px; 
     height: 500px; 
     background: var(--color-white);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Опціонально: тінь */
     margin-bottom: 10px;
     line-height: 1.5;
 }
@@ -230,9 +228,10 @@ a.button:hover {
 }
 
 .upperP {
-    margin-bottom: auto;/* Поки не можу розташувати цю р нижче. Зїжджає верхня р. Чи нанвішувати 2 класи на р?*/}
+    margin-bottom: auto;/* При звуженні екрану p не розташовується нижче. Чи нанвішувати 2 класи на р?*/
+}
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 900px) {/* чи правильно я тут прописала?*/
     .parentContainer4 {
     flex-direction: column;
     width: 1200px; /* Тут довелось вказати ширину 1200px, оскільки 100vw не підходило */
