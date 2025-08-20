@@ -126,7 +126,6 @@ a.button:hover {
     text-align: center;
     }
 
-
 .card1, .card2, .card3 {
     flex: 1 1 300px; /* Вивчити */
     min-width: 280px; 
