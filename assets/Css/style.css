@@ -9,6 +9,7 @@
     --color-black: #000000;
     --background-color1:#d3d3d3; 
     --background-color2:#333333;
+    --background-color3:#2690d4;
 }
 
 body {
@@ -186,8 +187,10 @@ a.button:hover {
 
 .parentContainer4 {
     display: flex; /* Тут я не задала justify-content та align-items, а задала їх в дочірньому класі.Це ок?*/
+    flex-wrap: wrap;
     min-width: 320px; /* Чи варто прописувати min-width? */
     width: 100vw;
+    min-height: 400px;
     color: var(--color-white);
 }
      
@@ -196,10 +199,12 @@ a.button:hover {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    column: 2;
+    flex-wrap: wrap;
     width: 50%;
-    height: 300px;
+    padding: 40px 30px;
+    line-height: 1.5;
 }
+
    
 .childBox1 h5, .childBox2 h5 {
     font-size: 1.725rem;
@@ -208,46 +213,60 @@ a.button:hover {
 
 .childBox1 p, .childBox2 p {
     font-size: 1.25rem;
-    line-height: 1.5;
     padding: 0 20px;
+   
+}
+.childBox2 p {
+    margin-bottom: auto;
 }
 
+
+
 .childBox1 {
-    background-color: rgb(38, 144, 212);
+    background-color: var(--background-color3);
 }
 
 .childBox2 {
     background-color:var(--background-color2);
 }
 
-.lowerP {
-    text-align: end;/* Поки не можу розташувати цю р нижче. Зїжджає верхня р. Чи нанвішувати 2 класи на р?*/
+.upperP {
+    margin-bottom: auto;/* Поки не можу розташувати цю р нижче. Зїжджає верхня р. Чи нанвішувати 2 класи на р?*/}
+
+@media screen and (max-width: 900px) {
+    .parentContainer4 {
+    flex-direction: column;
+    width: 1200px; /* Тут довелось вказати ширину 1200px, оскільки 100vw не підходило */
+    }
 }
 
-/* Неперевірені елементи нижче*/
 
 .parentContainer5 {
     display: flex;
     width: 100%;
     min-width: 320px;
-    justify-content: center;
+    justify-content:space-around;
     align-items: center;
     padding: 20px;
-    background-color: black;
+    background-color: var(--color-black);
     gap: 20px;
     flex-wrap: wrap;
     min-height: 100px;
-  color: white;
-  
+    color: var(--color-white);
+    font-size: 1.125rem;
+
 }
+
 .parentContainer5 a {
     text-decoration: none;
-    color:rgb(38, 144, 212);}
-
-    .parentContainer5 p {
-        margin: 0; /* Прибираємо зайві відступи */}
-
-        .footer-left, .footer-right {
-    flex: 1;
-    text-align: center;
+    color:var(--background-color3);
 }
+
+
+@media screen and (max-width: 900px) {
+    .parentContainer5 {
+    flex-direction: column;}
+
+}
+
+
